@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id         String         @id @default(cuid())
+  title      String
+  url        String         @unique
+  merchant   String
+  images     String         @default("[]")
+  priceCents Int?
+  tags       String         @default("[]")
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+  sourceRunId String?
+  creatives  Creative[]
+  links      AffiliateLink[]
+}
+
+model AffiliateLink {
+  id        String   @id @default(cuid())
+  productId String
+  network   String
+  deepLink  String
+  subId     String
+  shortLink String
+  createdAt DateTime @default(now())
+
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Creative {
+  id        String   @id @default(cuid())
+  productId String
+  type      String
+  script    String
+  hook      String
+  prompt    String
+  assetUrl  String
+  coverUrl  String?
+  createdAt DateTime @default(now())
+
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  posts     Post[]
+}
+
+model Post {
+  id         String   @id @default(cuid())
+  creativeId String
+  channel    String
+  postUrl    String?
+  status     String
+  createdAt  DateTime @default(now())
+
+  creative   Creative @relation(fields: [creativeId], references: [id], onDelete: Cascade)
+  metrics    Metric[]
+}
+
+model Metric {
+  id           String   @id @default(cuid())
+  postId       String
+  subId        String
+  source       String
+  clicks       Int?
+  conversions  Int?
+  revenueCents Int?
+  capturedAt   DateTime @default(now())
+
+  post         Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model RunLog {
+  id      String   @id @default(cuid())
+  runId   String
+  agent   String
+  level   String
+  message String
+  at      DateTime @default(now())
+}

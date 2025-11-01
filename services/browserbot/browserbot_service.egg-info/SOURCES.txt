@@ -1,0 +1,7 @@
+main.py
+pyproject.toml
+browserbot_service.egg-info/PKG-INFO
+browserbot_service.egg-info/SOURCES.txt
+browserbot_service.egg-info/dependency_links.txt
+browserbot_service.egg-info/requires.txt
+browserbot_service.egg-info/top_level.txt
