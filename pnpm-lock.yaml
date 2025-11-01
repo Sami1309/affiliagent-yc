@@ -16,6 +16,9 @@ importers:
       '@prisma/client':
         specifier: ^5.22.0
         version: 5.22.0(prisma@5.22.0)
+      hyperspell:
+        specifier: ^0.26.0
+        version: 0.26.0
       next:
         specifier: 16.0.1
         version: 16.0.1(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -1392,6 +1395,10 @@ packages:
 
   hermes-parser@0.25.1:
     resolution: {integrity: sha512-6pEjquH3rqaI6cYAXYPcz9MS4rY6R4ngRgrgfDshRptUZIc3lw0MCIJIGDj9++mfySOuPTHB4nrSW99BCvOPIA==}
+
+  hyperspell@0.26.0:
+    resolution: {integrity: sha512-ehaNz+7csgDt7Dzm/oCdDPrImJYjwHl80nPinJgIC00/zOkyqXnZkacfyQqjO6xVYT88fxs5ZEsPfctcpzDeGw==}
+    hasBin: true
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -3551,6 +3558,8 @@ snapshots:
   hermes-parser@0.25.1:
     dependencies:
       hermes-estree: 0.25.1
+
+  hyperspell@0.26.0: {}
 
   ignore@5.3.2: {}
 

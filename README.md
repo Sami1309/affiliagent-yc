@@ -1,6 +1,20 @@
-# Affiliate Auto-Pilot
+# Affiliagent
 
-Phase 0 scaffolding for the affiliate automation pipeline described in `ROADMAP.md`.
+**Your AI-powered affiliate marketing assistant that works while you sleep.**
+
+**Smart AI Agents That Learn From Each Other**
+- **Trend Finder**: Scours the web for emerging trends and consumer interests
+- **Product Finder**: Discovers high-potential Amazon products matching current trends
+- **Persona Generator**: Creates detailed target audience profiles for authentic marketing
+- **Video Agent**: Generates UGC-style videos using cutting-edge SORA 2 technology
+
+Each agent continuously learns from the others through feedback loops, improving recommendations with every campaign you run.
+
+**Real-Time Browser Automation**
+Watch live as our browser agent researches trends, navigates product pages, and gathers insights—all visible in your dashboard with real-time progress updates.
+
+**Professional Video Content, Zero Production Time**
+Generate authentic UGC-style videos for your products without cameras, actors, or editing software. Just select your products and let the AI create scroll-stopping content.
 
 ## Tech stack
 
@@ -28,12 +42,33 @@ The app runs on <http://localhost:3000>. The dashboard renders:
 - A pipeline snapshot sourced from the seeded database records.
 - A live run log fed by Prisma, automatically refreshing during discovery runs.
 
-## Demo workflow
+## Quick Start Guide
 
-1. Drop your credentials into `apps/web/.env` (Amazon Associates tag + PA-API keys, OpenAI key, etc.).
-2. Start the dev server with `pnpm --filter web dev`.
-3. Enter a campaign brief in the dashboard and click **Run Discovery**.
-4. Watch the LLM ideas, Amazon PA-API lookups, and SiteStripe links populate in real time.
+**Step 1: Set Up Your API Keys**
+Copy your environment file and add your credentials:
+```bash
+cp .env.example .env.local
+```
+You'll need:
+- Amazon Associates Tag (free to sign up)
+- OpenAI API Key (for AI agents)
+- FAL API Key (for video generation)
+- Browser-Use API Key (for web automation)
+
+**Step 2: Install & Launch**
+```bash
+pnpm install
+pnpm db:push
+pnpm dev
+```
+
+**Step 3: Create Your First Campaign**
+1. Open `http://localhost:3001` in your browser
+2. Describe what you're looking for (e.g., "Find trending kitchen gadgets under $50")
+3. Click **Research Trends** and watch the AI agents work their magic
+4. Select products you like and generate UGC videos instantly
+
+That's it! The agents will research trends, discover products, and you can start creating content in minutes.
 
 ## Workspace layout
 
