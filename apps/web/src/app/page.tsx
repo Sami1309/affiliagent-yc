@@ -54,11 +54,11 @@ export default async function Dashboard() {
         },
       },
       orderBy: { createdAt: "desc" },
-      take: 12,
+      take: 8, // Reduced from 12 for faster initial load
     }),
     prisma.runLog.findMany({
       orderBy: { at: "desc" },
-      take: 30,
+      take: 20, // Reduced from 30 for faster initial load
     }),
   ]);
 

@@ -20,6 +20,7 @@ model Product {
   sourceRunId String?
   creatives  Creative[]
   links      AffiliateLink[]
+  generatedVideos GeneratedVideo[]
 }
 
 model AffiliateLink {
@@ -81,4 +82,21 @@ model RunLog {
   level   String
   message String
   at      DateTime @default(now())
+}
+
+model GeneratedVideo {
+  id                String   @id @default(cuid())
+  productId         String
+  videoUrl          String
+  personaImageUrl   String?
+  personaName       String
+  personaDescription String
+  targetPlatforms   String   @default("[]")
+  strategyOverview  String
+  prompt            String
+  duration          Int
+  aspectRatio       String
+  createdAt         DateTime @default(now())
+
+  product           Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }

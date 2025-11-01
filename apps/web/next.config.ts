@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.example.com",
       },
+      {
+        protocol: "https",
+        hostname: "v3b.fal.media",
+      },
     ],
   },
 };
