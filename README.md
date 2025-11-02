@@ -2,6 +2,12 @@
 
 **Your AI-powered affiliate marketing assistant that works while you sleep.**
 
+<img width="1000" height="400" alt="Screenshot 2025-11-01 at 5 34 28 PM" src="https://github.com/user-attachments/assets/38019038-5062-4393-a42d-a852ca93f0d0" />
+<img width="1000" height="400" alt="Screenshot 2025-11-01 at 5 34 44 PM" src="https://github.com/user-attachments/assets/0e3fc966-827b-44c2-90ec-019192f41046" />
+
+
+
+
 **Smart AI Agents That Learn From Each Other**
 - **Trend Finder**: Scours the web for emerging trends and consumer interests
 - **Product Finder**: Discovers high-potential Amazon products matching current trends
